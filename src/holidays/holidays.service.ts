@@ -17,11 +17,28 @@ export class HolidayService {
     const holiday = this.holidayRepository.create({
       title: createHolidayDto.title,
       description: createHolidayDto.description,
-      start_date: createHolidayDto.startDate,
-      end_date: createHolidayDto.endDate,
+      start_date: createHolidayDto.start_date,
+      end_date: createHolidayDto.end_date,
       type: createHolidayDto.type,
-      is_recoverable: createHolidayDto.isRecoverable,
+      is_recoverable: createHolidayDto.is_recoverable,
     });
+    return this.holidayRepository.save(holiday);
+  }
+
+  async update(
+    id: string,
+    createHolidayDto: CreateHolidayDto,
+  ): Promise<Holiday> {
+    const holiday = await this.holidayRepository.findOneBy({ id });
+    if (!holiday) {
+      throw new Error(`Holiday with ID ${id} not found`);
+    }
+    holiday.title = createHolidayDto.title;
+    holiday.description = createHolidayDto.description;
+    holiday.start_date = createHolidayDto.start_date;
+    holiday.end_date = createHolidayDto.end_date;
+    holiday.type = createHolidayDto.type;
+    holiday.is_recoverable = createHolidayDto.is_recoverable;
     return this.holidayRepository.save(holiday);
   }
 

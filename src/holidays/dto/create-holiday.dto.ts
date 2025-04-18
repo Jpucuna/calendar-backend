@@ -20,15 +20,15 @@ export class CreateHolidayDto {
 
   @Type(() => Date)
   @IsDate()
-  startDate: Date;
+  start_date: Date;
 
   @Type(() => Date)
   @IsDate()
-  endDate: Date;
+  end_date: Date;
 
   @IsEnum(HolidayType)
   type: HolidayType;
 
   @IsBoolean()
-  isRecoverable: boolean;
+  is_recoverable: boolean;
 }

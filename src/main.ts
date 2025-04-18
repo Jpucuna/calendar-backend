@@ -4,6 +4,9 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: 'http://localhost:3000', // solo para pruebas
+  });
   // Activar validación automática
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT ?? 3030);

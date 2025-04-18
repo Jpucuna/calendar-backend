@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { HolidaysModule } from './holidays/holidays.module';
-import { DefaultHolidaysModule } from './default-holidays/default-holidays.module';
 
 @Module({
   imports: [
@@ -22,7 +21,6 @@ import { DefaultHolidaysModule } from './default-holidays/default-holidays.modul
       inject: [ConfigService],
     }),
     HolidaysModule,
-    DefaultHolidaysModule,
   ],
 })
 export class AppModule {}

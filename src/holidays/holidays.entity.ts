@@ -7,10 +7,10 @@ import {
 } from 'typeorm';
 
 export enum HolidayType {
-  NATIONAL = 'NATIONAL',
-  REGIONAL = 'REGIONAL',
-  LOCAL = 'LOCAL',
-  PERSONAL = 'PERSONAL', // 👈 Agregado aquí
+  NATIONAL = 'nacional',
+  REGIONAL = 'regional',
+  LOCAL = 'local',
+  PERSONAL = 'personal', // 👈 Agregado aquí
 }
 
 @Entity('holidays')

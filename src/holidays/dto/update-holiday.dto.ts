@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-
 import { IsDateString, IsNotEmpty, IsString } from 'class-validator';
 export class UpdateHolidayDto {
   @IsNotEmpty()
@@ -8,11 +6,11 @@ export class UpdateHolidayDto {
 
   @IsNotEmpty()
   @IsDateString()
-  start_date: string;
+  start_Date: Date;
 
   @IsNotEmpty()
   @IsDateString()
-  end_date: string;
+  end_date: Date;
 
   @IsNotEmpty()
   @IsString()
