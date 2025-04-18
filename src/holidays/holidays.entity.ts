@@ -10,7 +10,7 @@ export enum HolidayType {
   NATIONAL = 'nacional',
   REGIONAL = 'regional',
   LOCAL = 'local',
-  PERSONAL = 'personal', // 👈 Agregado aquí
+  PERSONAL = 'personal',
 }
 
 @Entity('holidays')
